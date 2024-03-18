@@ -22,17 +22,17 @@
 namespace spheremap_server
 {
 
+  class MappingNodelet : public nodelet::Nodelet
+  {
+  public:
+    virtual void onInit();
 
-class MappingNodelet : public nodelet::Nodelet {
-public:
-  virtual void onInit();
+  private:
+    bool is_initialized_ = false;
 
-private:
-  bool             is_initialized_        = false;
+    ExplorationMapper *mapper_;
+  };
 
-  ExplorationMapper * mapper_;
-};
-
-}  // namespace spheremap_server
+} // namespace spheremap_server
 
 #endif
